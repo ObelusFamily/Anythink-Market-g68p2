@@ -3,11 +3,9 @@ var mongoose = require('mongoose');
 var Item = mongoose.model('Item');
 
 //return list of titles
-router.get('/', function(req, res, next)
-{
-  Item.find().distinct('titleList').then(function(title)
-  {
-    return res.json({title : title});
+router.get('/', function(req, res, next) {
+  Item.find().distinct('titleList').then(function(title) {
+    return res.json({title: title});
   }).catch(next);
 });
 
